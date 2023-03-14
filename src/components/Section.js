@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-function Section() {
+function Section({title, description, leftBtnText, rightBtnText, backgroundImg}) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
         <ItemText>
-            <h1>Model S</h1>
-            <p>Order Online Touchless Delivery</p>
+            <h1>{ title }</h1>
+            <p>{ description }</p>
         </ItemText>
         <Buttons>
                 <ButtonGroup>
                     <LeftButton>
-                        Custom Order
+                        {leftBtnText}
                     </LeftButton>
                     <RightButton>
-                        Existing Inventory
+                    {rightBtnText}
                     </RightButton>
                 </ButtonGroup>
                 <DOwnArrow src="/images/down-arrow.svg" />
@@ -34,6 +34,7 @@ const Wrap = styled.div`
     flex-direction: column;
     justify-content: space-between; //verial
     align-items: center; //horizontal
+    background-image:${props => `url("/images/${props.bgImage}")`}
 
 `
 const ItemText = styled.div`
@@ -43,6 +44,9 @@ const ItemText = styled.div`
 const ButtonGroup = styled.div`
 display:flex;
 margin-bottom: 30px;
+@media (max-width: 768px){
+        flex-direction: column;
+}
 `
 
 const LeftButton = styled.div`
@@ -62,10 +66,11 @@ margin: 8px;
 `
 
 const RightButton = styled(LeftButton)`
-
+background: white;
+opacity: 0.65;
+color: black;
 `
 const DOwnArrow = styled.img`
-    margin-top: 20px;
     height: 40px;
     overflow-x: hidden;
     animation: animateDown infinite 1.5s;
