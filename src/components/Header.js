@@ -40,7 +40,13 @@ function Header(){
                     <li><a href="#">Used Inventory</a></li>
                     <li><a href="#">Trade-in</a></li>
                     <li><a href="#">Cybertruck</a></li>
-                    <li><a href="#">Roadster</a></li>
+                    <li><a href="#">Semi</a></li>
+                    <li><a href="#">Charging</a></li>
+                    <li><a href="#">Powerwall</a></li>
+                    <li><a href="#">Commercial Energy</a></li>
+                    <li><a href="#">Utilties</a></li>
+                    <li><a href="#">Find us</a></li>
+                    <li><a href="#">Investor Relations</a></li>
         </BurgerNav>
     </Container>
   )
