@@ -23,7 +23,7 @@ function Header(){
             <a href="#">Model Y</a>
         </Menu>
         <RightMenu>
-            <a href="#">Shop</a>
+            <a href="#">Shop </a>
             <a href="#">Tesla Account</a>
             <CustomMenu onClick={()=>setBurgerStatus(true)} />
         </RightMenu>
@@ -88,6 +88,7 @@ a{
     font-weight: 600;
     text-transform: uppercase;
     marign-right: 10px;
+    padding: 5px
 }
 `
 
