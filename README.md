@@ -1,4 +1,5 @@
 I present to you a project of a Tesla website clone. It was my first project written using React technology. In it, I learned:
+
 -creating applications in React
 
 -styling in React
