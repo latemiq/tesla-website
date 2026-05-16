@@ -2,8 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
 function Section({title, description, leftBtnText, rightBtnText, backgroundImg}) {
+  const scrollToNextSection = (event) => {
+    const currentSection = event.currentTarget.closest('[data-section]');
+    const nextSection = currentSection?.nextElementSibling;
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <Wrap bgImage={backgroundImg}>
+    <Wrap bgImage={backgroundImg} data-section>
             <Fade bottom>
         <ItemText>
             <h1>{ title }</h1>
@@ -22,7 +31,9 @@ function Section({title, description, leftBtnText, rightBtnText, backgroundImg})
                     </RightButton>}
                 </ButtonGroup>
                 </Fade>
-                <DOwnArrow src="/images/down-arrow.svg" />
+                <DownArrowButton onClick={scrollToNextSection} aria-label="Scroll to next section">
+                    <DownArrow src="/images/down-arrow.svg" alt="" />
+                </DownArrowButton>
         </Buttons>
     </Wrap>
   )
@@ -77,11 +88,16 @@ background: white;
 opacity: 0.65;
 color: black;
 `
-const DOwnArrow = styled.img`
+const DownArrowButton = styled.button`
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+`
+const DownArrow = styled.img`
     height: 40px;
     overflow-x: hidden;
     animation: animateDown infinite 1.5s;
-    cursor: pointer;
 `
 const Buttons = styled.div`
 
